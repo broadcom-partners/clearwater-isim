@@ -35,7 +35,7 @@ jobs:
           echo "<body>" >> index.html
           echo "  <h1>Repository Files</h1>" >> index.html
           echo "  <ul>" >> index.html
-          find . -name "*" -not -name "index.html" | sort | while read filename; do
+          find . -name "*.html" -o -name "*.pdf" -not -name "index.html" | sort | while read filename; do
             filename=${filename#./} # Remove the leading './'
             echo "    <li><a href=\"${filename}\">${filename}</a></li>" >> index.html
           done
